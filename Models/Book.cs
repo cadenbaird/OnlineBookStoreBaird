@@ -2,6 +2,7 @@
 
 namespace OnlineBookStoreBaird.Models
 {
+    // This class will hold the book information
     public class Book
     {
         [Key]

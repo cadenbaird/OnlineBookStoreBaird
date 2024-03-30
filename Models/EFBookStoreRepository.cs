@@ -1,6 +1,7 @@
 ﻿
 namespace OnlineBookStoreBaird.Models
 {
+    // This class will hold the repository
     public class EFBookStoreRepository : IBookStoreRepository
     {
         private OnlineBookStoreDBContext _context;

@@ -1,5 +1,6 @@
 ﻿namespace OnlineBookStoreBaird.Models.ViewModels
 {
+    // This class will hold the pagination information
     public class PaginationInfo
     {
         public int TotalItems { get; set; }

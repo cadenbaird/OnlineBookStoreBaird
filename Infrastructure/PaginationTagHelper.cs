@@ -7,9 +7,11 @@ using OnlineBookStoreBaird.Models.ViewModels;
 
 namespace OnlineBookStoreBaird.Infrastructure
 {
+    // This class is a TagHelper that will create a div element with a list of links to pages
     [HtmlTargetElement("div", Attributes = "page-model")]
     public class PaginationTagHelper : TagHelper
     {
+        // Create a private variable to hold the IUrlHelperFactory
         private IUrlHelperFactory urlHelperFactory;
 
         public PaginationTagHelper(IUrlHelperFactory temp)
@@ -17,18 +19,21 @@ namespace OnlineBookStoreBaird.Infrastructure
             urlHelperFactory = temp;
         }
 
+        // Create a public variable to hold the ViewContext
         [ViewContext]
         [HtmlAttributeNotBound]
         public ViewContext? ViewContext { get; set; }
+        // Create a public variable to hold the PaginationInfo
         public string? PageAction { get; set; }
         public PaginationInfo PageModel { get; set; }
-
+        
+        // Create public variables to hold the page classes
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; } = String.Empty;
         public string PageClassNormal { get; set; } = String.Empty;
         public string PageClassSelected { get; set; } = String.Empty;
 
-
+        // This method will create the div element with the list of links to pages
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             if (ViewContext != null && PageModel != null)
